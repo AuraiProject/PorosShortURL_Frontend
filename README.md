@@ -3,7 +3,7 @@
 #### Technology 
 ready to use:
 
-react + react-router + mobx + ant.design
+react + react-router + ant.design
 
 #### Other
 Backend: https://github.com/Arianxx/PorosShortURL_Backend

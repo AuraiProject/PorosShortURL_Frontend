@@ -24,10 +24,18 @@ body {
 .myHeader {
     width: 100%;
     height: 100%;
+    background: white;
+    padding: 0;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.navMenu {
+    border-bottom: none;
 }
 
 .menuItem {
     float: right;
+    margin-top: 0 !important;
 }
 
 .logo {
@@ -35,8 +43,15 @@ body {
     font-weight: bolder;
     font-size: 20px;
     padding-left: 30px;
+    float: left;
+    line-height: 40px;
+    margin-top: 3px;
 }
 
 .logoIcon {
     margin-right: 5px;
+}
+
+.content {
+    background: white;
 }

@@ -8,7 +8,7 @@ const {Footer} = Layout;
 export class MyFooter extends PureComponent {
   render() {
     return (
-      <Footer style={{textAlign: 'center'}}>
+      <Footer style={{textAlign: 'center'}} className='myFooter'>
         <span className='footerText'>
           Copyright (c) 2018 ArianX
         </span>

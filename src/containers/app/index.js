@@ -14,14 +14,11 @@ export class App extends Component {
   render() {
     return (
       <Layout>
-        <div className="myHeader">
-          <MyHeader/>
-        </div>
-        <Content>
+        <MyHeader/>
+        <Content className='content'>
+          {this.props.children}
         </Content>
-        <div className="myFooter">
-          <MyFooter/>
-        </div>
+        <MyFooter/>
       </Layout>
     )
   }

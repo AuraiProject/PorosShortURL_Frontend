@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
-import {Form, Input} from 'antd';
+import {Form, Input, Icon} from 'antd';
 
 import {InputBox} from "../../components/inputBox";
 import {shortToLong} from "../../urils/api";
+import {PasswordModal} from "./passwordModal";
 import {successModal, errorModal, LoadingButton} from "../../components/message";
 import {formatResult} from "../../urils/format";
 
@@ -12,10 +13,26 @@ const FormItem = Form.Item;
 export class _RestoreShortUrl extends Component {
   state = {
     loading: false,
+    showModal: false
   };
+
+  constructor(props) {
+    super(props);
+    this.password = null;
+  }
 
   handleSubmit = (e) => {
     console.log(e);
+  };
+
+  handleModal = () => {
+    this.setState({
+      showModal: !this.state.showModal
+    })
+  };
+
+  setPassword = (password) => {
+    this.password = password;
   };
 
   formOnBlur = () => {
@@ -51,7 +68,9 @@ export class _RestoreShortUrl extends Component {
                   validateTrigger: false
                 })(
                   <Input placeholder="Input the short url." size="large"
-                         onBlur={this.formOnBlur}
+                         onBlur={this.formOnBlur} addonAfter={
+                    <Icon type="unlock" theme="outlined" onClick={this.handleModal} className='customIcon'/>
+                  }
                   />
                 )
               }
@@ -62,6 +81,11 @@ export class _RestoreShortUrl extends Component {
             </FormItem>
           </Form>
         </InputBox>
+        <PasswordModal show={this.state.showModal}
+                       password={this.password}
+                       hiddenModal={this.handleModal}
+                       setPassword={this.setPassword}
+        />
       </div>
     )
   }

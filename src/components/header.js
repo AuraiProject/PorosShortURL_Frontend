@@ -3,6 +3,25 @@ import {Menu, Icon, Layout, Row, Col} from 'antd';
 import {withRouter} from 'react-router-dom';
 
 
+class _Logo extends PureComponent {
+  handleClick = () => {
+    this.props.history.push('/');
+  };
+
+  render() {
+    return (
+      <div onClick={this.handleClick} {...this.props}>
+        <Icon type='fire' style={{fontSize: '20px', color: "aqua"}} className="logoIcon"/>
+        <i>Short Url</i>
+      </div>
+    )
+  }
+}
+
+
+const Logo = withRouter(_Logo);
+
+
 class _MyHeader extends PureComponent {
   constructor(props) {
     super();
@@ -26,10 +45,10 @@ class _MyHeader extends PureComponent {
       <Layout.Header className="myHeader">
         <Row>
           <Col xs={0} md={12}>
-            <div className='logo'>
-              <Icon type='fire' style={{fontSize: '20px', color: "aqua"}} className="logoIcon"/>
-              <i>Short Url</i>
-            </div>
+            <Logo className='logo wideLogo'/>
+          </Col>
+          <Col xs={24} md={0}>
+            <Logo className='logo narrowLogo'/>
           </Col>
           <Col xs={24} md={12}>
             <Menu

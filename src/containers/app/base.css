@@ -45,7 +45,14 @@ body {
     padding-left: 30px;
     float: left;
     line-height: 40px;
-    margin-top: 3px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.narrowLogo {
+    width: 100%;
+    padding: 0;
+    text-align: center;
 }
 
 .logoIcon {
@@ -54,4 +61,54 @@ body {
 
 .content {
     background: white;
+}
+
+.inputBox {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 50%;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+
+.generateInputBoxIcon {
+    animation: inputBoxRotate 4s linear infinite;
+    color: lightblue;
+}
+
+@keyframes inputBoxRotate {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.restoreInputBoxIcon {
+    animation: inputBoxReverseRotate 4s linear infinite;
+    color: lightgreen;
+}
+
+@keyframes inputBoxReverseRotate {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(-180deg);
+    }
+    100% {
+        transform: rotate(-360deg);
+    }
+}
+
+.customIcon:hover {
+    color: #66ccff;
+    cursor: pointer;
 }

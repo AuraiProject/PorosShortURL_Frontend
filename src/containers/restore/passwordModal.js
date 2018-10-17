@@ -17,9 +17,9 @@ const formItemLayout = {
 
 export class _PasswordModal extends PureComponent {
   handleOk = () => {
-    this.props.form.validateFields((err, password) => {
+    this.props.form.validateFields((err, values) => {
       if (!err) {
-        this.props.setPassword(password);
+        this.props.setPassword(values.password);
         this.props.hiddenModal();
         message.success('Your change have been saved.');
       }

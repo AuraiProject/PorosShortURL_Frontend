@@ -28,8 +28,8 @@ class _GenerateShortUrl extends PureComponent {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const values = this.props.form.getFieldValue('url');
-    if (!values) {
+    const value = this.props.form.getFieldValue('url');
+    if (!value) {
       return false;
     }
 
@@ -47,9 +47,9 @@ class _GenerateShortUrl extends PureComponent {
         });
         longToShort(allValues).then(async res => {
           let resJson = await res.json();
-          if (res.status === 400) {
+          if (res.status !== 200) {
             errorModal(resJson);
-          } else if (res.status === 200) {
+          } else {
             resJson = formatResult(resJson);
             successModal(resJson);
           }

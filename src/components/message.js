@@ -10,10 +10,10 @@ export class LoadingButton extends PureComponent {
       htmlType: "submit",
       size: "large",
       style: {borderRadius: "100px"},
-      ghost: true
+      ghost: true,
     };
     return loading ? (
-      <Button {...settings} {...rest}>
+      <Button {...settings} disabled {...rest}>
         <Icon type="loading" theme="outlined"/>
         Loading...
       </Button>
@@ -26,7 +26,7 @@ export class LoadingButton extends PureComponent {
 }
 
 
-export function successModal(info) {
+export function successModal(info, jump = false) {
   Modal.success({
     title: 'Operation Success. Results:',
     content: (
@@ -36,6 +36,17 @@ export function successModal(info) {
             JSON.stringify(info, null, 4)
           }
         </code>
+        {
+          jump ? (
+            <div>
+              <hr/>
+              <a href={info.url} target="_blank" style={{
+                textDecoration: null,
+                color: "#66ccff"
+              }}>Jump to the origin url?</a>
+            </div>
+          ) : null
+        }
       </div>
     )
   })

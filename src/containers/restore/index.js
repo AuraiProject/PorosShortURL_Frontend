@@ -22,7 +22,37 @@ export class _RestoreShortUrl extends Component {
   }
 
   handleSubmit = (e) => {
-    console.log(e);
+    e.preventDefault();
+    const value = this.props.form.getFieldValue('short_url');
+    if (!value) {
+      return false;
+    }
+
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        this.setState({
+          loading: true
+        });
+
+        if (!values.short_url.startsWith('http://') && !values.short_url.startsWith('https://')) {
+          values.short_url = 'http://' + values.short_url
+        }
+
+        shortToLong(values, this.password).then(async res => {
+          let resJson = await res.json();
+          if (res.status !== 200) {
+            errorModal(resJson);
+          } else {
+            resJson = formatResult(resJson);
+            successModal(resJson, true);
+          }
+
+          this.setState({
+            loading: false
+          });
+        }).catch(err => console.log(err));
+      }
+    })
   };
 
   handleModal = () => {

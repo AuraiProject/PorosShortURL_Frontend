@@ -68,7 +68,7 @@ export class _RestoreShortUrl extends Component {
   formOnBlur = () => {
     const value = this.props.form.getFieldValue('short_url');
     this.props.form.setFields({
-      url: {
+      short_url: {
         value: value,
         errors: null
       }

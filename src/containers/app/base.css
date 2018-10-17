@@ -63,7 +63,7 @@ body {
     background: white;
 }
 
-.inputBox {
+.inputBox, .notFoundBox {
     position: absolute;
     top: 45%;
     transform: translateY(-50%);
@@ -111,4 +111,12 @@ body {
 .customIcon:hover {
     color: #66ccff;
     cursor: pointer;
+}
+
+.notFoundPrompt {
+    line-height: 30px;
+    font-size: large;
+    font-weight: bold;
+    margin-top: 10px;
+    color: grey;
 }

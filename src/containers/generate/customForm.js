@@ -48,6 +48,10 @@ class _CustomForm extends Component {
                 rules: [
                   {
                     min: 3, max: 7, message: "Specify url’s length must be 4~7."
+                  },
+                  {
+                    pattern: /^[A-Za-z0-9]*$/,
+                    message: "Specify url can only have number and letter."
                   }
                 ],
                 initialValue: values['short_url'],

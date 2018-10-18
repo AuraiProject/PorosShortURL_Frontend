@@ -4,9 +4,9 @@ import {Icon} from 'antd';
 
 export class InputBox extends Component {
   render() {
-    const {inputBoxIconClassName} = this.props;
+    const {inputBoxIconClassName, ...rest} = this.props;
     return (
-      <div className='inputBox'>
+      <div className='inputBox' {...rest}>
         <p className='siteLogo'>
           <Icon type='radar-chart' style={{fontSize: '100px'}} className={inputBoxIconClassName}/>
         </p>

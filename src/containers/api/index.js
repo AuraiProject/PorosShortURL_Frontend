@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import {Card} from 'antd';
 
-import {InputBox} from "../../components/inputBox";
-
 
 const docContent = {
   title: "/api/url",
@@ -16,14 +14,10 @@ const docContent = {
           <p>Get the full info from the existing short url.</p>
           <br/>
           <strong>Params</strong>
-          <ul>
-            <li>short_url: The short url that you want to get the info.</li>
-          </ul>
+          <p>short_url: The short url that you want to get the info.</p>
           <br/>
           <strong>Headers</strong>
-          <ul>
-            <li>Authentication: Basic %The short url's base64 encoded password.(optional)%</li>
-          </ul>
+          <p>Authentication: Basic %The short url's base64 encoded password.(optional)%</p>
         </div>
       )
     },
@@ -36,13 +30,11 @@ const docContent = {
           <p>Create a short url by given info.</p>
           <br/>
           <strong>Params</strong>
-          <ul>
-            <li>url: The url that will be encoded to a short url.</li>
-            <li>short_url: The short url that you want get.</li>
-            <li>digit: The short url's length that you want to get.</li>
-            <li>expired_timestamp: The python format timestamp to specify a expired time.</li>
-            <li>password: The password of the short_url.</li>
-          </ul>
+          <p>url: The url that will be encoded to a short url.</p>
+          <p>short_url: The short url that you want get.</p>
+          <p>digit: The short url's length that you want to get.</p>
+          <p>expired_timestamp: The python format timestamp to specify a expired time.</p>
+          <p>password: The password of the short_url.</p>
         </div>
       )
     }
@@ -63,7 +55,7 @@ export class ApiDoc extends Component {
 
   render() {
     return (
-      <InputBox inputBoxIconClassName="apiDocInputBoxIcon">
+      <div className="apiDocBox">
         <Card
           title={docContent.title}
           tabList={docContent.content}
@@ -75,7 +67,7 @@ export class ApiDoc extends Component {
             docContent.content.filter(o => o.key === this.state.key)[0].content
           }
         </Card>
-      </InputBox>
+      </div>
     )
   }
 }

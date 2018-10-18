@@ -121,6 +121,15 @@ body {
     color: grey;
 }
 
-.apiDocInputBoxIcon {
-    display: none;
+.apiDocBox {
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 50px;
+    width: 80%;
+}
+
+.apiDocBox > .ant-card-body {
+    text-align: center;
 }

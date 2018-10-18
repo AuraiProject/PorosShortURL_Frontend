@@ -127,9 +127,5 @@ body {
     right: 0;
     margin: auto;
     margin-top: 50px;
-    width: 80%;
-}
-
-.apiDocBox > .ant-card-body {
-    text-align: center;
+    width: 60%;
 }

@@ -100,6 +100,10 @@ class _GenerateShortUrl extends PureComponent {
                     {
                       pattern: /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/gi,
                       message: "This field must be a valid url."
+                    },
+                    {
+                      pattern: /^((?!kei\.me).)+$/,
+                      message: "Can't handle this site's own links."
                     }
                   ],
                   validateTrigger: false

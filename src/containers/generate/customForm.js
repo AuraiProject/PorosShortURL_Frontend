@@ -63,11 +63,9 @@ class _CustomForm extends Component {
                 initialValue: values['digit']
               })(
                 <RadioGroup defaultvalue={4}>
-                  <Radio value={3}>3</Radio>
-                  <Radio value={4}>4</Radio>
-                  <Radio value={5}>5</Radio>
-                  <Radio value={6}>6</Radio>
-                  <Radio value={7}>7</Radio>
+                  {
+                    [3, 4, 5, 6, 7].map(k => <Radio value={k}>{k}</Radio>)
+                  }
                 </RadioGroup>
               )
             }

@@ -51,7 +51,7 @@ class _GenerateShortUrl extends PureComponent {
             errorModal(resJson);
           } else {
             resJson = formatResult(resJson);
-            successModal(resJson);
+            successModal(resJson, false, true);
           }
 
           this.setState({

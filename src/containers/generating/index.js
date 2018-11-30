@@ -9,7 +9,6 @@ import {timeToPythonTimestamp, formatResult} from "../../urils/format";
 
 const FormItem = Form.Item;
 
-
 class _GenerateShortUrl extends PureComponent {
   state = {
     custom: false,

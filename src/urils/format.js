@@ -18,6 +18,7 @@ export const formatResult = resJson => {
   }
   delete resJson.created_timestamp;
   delete resJson.expired_timestamp;
+  // resJson.password will always be empty.
   delete resJson.password;
   return resJson;
 };

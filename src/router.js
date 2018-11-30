@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import {App} from './containers/app';
-import {GenerateShortUrl} from "./containers/generate";
-import {RestoreShortUrl} from "./containers/restore";
-import {CheckPassword} from "./containers/check/check";
+import {GenerateShortUrl} from "./containers/generating";
+import {RestoreShortUrl} from "./containers/restoring";
+import {CheckPassword} from "./containers/checking/check";
 import {ApiDoc} from "./containers/api";
 import {NotFound} from "./components/notFound";
 

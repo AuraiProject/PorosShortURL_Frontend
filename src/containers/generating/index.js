@@ -35,11 +35,14 @@ class _GenerateShortUrl extends PureComponent {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         const allValues = {...values, ...this.customValues};
+
         let date = this.customValues.expired_timestamp;
         allValues.expired_timestamp = date && timeToPythonTimestamp(date);
+
         if (!allValues.url.startsWith('http://') && !allValues.url.startsWith('https://')) {
           allValues.url = 'http://' + allValues.url
         }
+        allValues.url = encodeURIComponent(allValues.url);
 
         this.setState({
           loading: true
